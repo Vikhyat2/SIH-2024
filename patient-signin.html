@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Sign In - Healthcare Data Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="signin-container">
+        <h2>Patient Sign In</h2>
+        <form id="patientSignInForm" onsubmit="return validatePatientForm()">
+            <div class="input-group">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+            </div>
+            <div class="input-group">
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
+            <div class="input-group">
+                <label for="mobileNumber">Mobile Number:</label>
+                <input type="text" id="mobileNumber" name="mobileNumber" required>
+                <button type="button" onclick="verifyMobile()">Verify Mobile Number</button>
+            </div>
+            <div class="input-group">
+                <label for="email">Email ID:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="aadharNumber">Aadhar Number:</label>
+                <input type="text" id="aadharNumber" name="aadharNumber" required>
+            </div>
+            <button type="submit">Sign In</button>
+        </form>
+    </div>
+
+    <!-- OTP Dialog -->
+    <div id="otpDialog" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeOtpDialog()">&times;</span>
+            <p>Enter OTP sent to your mobile number:</p>
+            <input type="text" id="otp" name="otp">
+            <button type="button" onclick="submitOtp()">Submit OTP</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
